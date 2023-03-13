@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {BrowserRouter,Route,Routes,Link} from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
 
 
 /**
@@ -20,9 +23,21 @@ import ReactDOM from 'react-dom/client';
 
 function App() {
   return (
-    <h1>Start here</h1>
+    <BrowserRouter>
+    <header>
+      <Link to="/">#VANLIFE</Link>
+      <nav>
+        <Link to="/about">About</Link>
+      </nav>
+    </header>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
+
 
 ReactDOM
   .createRoot(document.getElementById('root'))
