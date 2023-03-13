@@ -14,8 +14,8 @@ body::-webkit-scrollbar {
 }
 
 body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none; */
+  /* scrollbar-width: none; */
 }
 
 header {
