@@ -6,6 +6,7 @@ import About from './pages/About'
 import Vans from './pages/Vans';
 
 
+
 /**
  * Challenge:
  * Bootstrap the VanLife project by creating the first 2 routes:
@@ -22,22 +23,32 @@ import Vans from './pages/Vans';
  * linked in the slides.
  */
 
+function Main(props){
+  return(
+    <main className='main'>
+      {props.children}
+    </main>
+  )
+}
+
 function App() {
   return (
-    <BrowserRouter>
-    <header>
-    <Link className="site-logo" to="/">#VanLife</Link>
-      <nav>
-        <Link to="/about">About</Link>
-        <Link to="/vans">Vans</Link>
-      </nav>
-    </header>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/vans" element={<Vans />}></Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Main>
+          <header>
+            <Link className="site-logo" to="/">#VanLife</Link>
+            <nav>
+              <Link to="/about">About</Link>
+              <Link to="/vans">Vans</Link>
+            </nav>
+          </header>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/vans" element={<Vans />}></Route>
+          </Routes>
+        </Main>
+      </BrowserRouter>
   )
 }
 
