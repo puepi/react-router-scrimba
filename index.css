@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
 .main{
     width:85%;
     margin:0 auto;
-    max-width:900px
+    max-width:950px
 }
 body {
   /* -ms-overflow-style: none; */
