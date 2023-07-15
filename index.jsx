@@ -7,6 +7,7 @@ import Vans from './pages/Vans';
 
 import './server'
 import VansDetail from './pages/VansDetail';
+import Layout from './components/Layout';
 
 
 /**
@@ -36,21 +37,14 @@ function Main(props){
 function App() {
   return (
       <BrowserRouter>
-        <Main>
-          <header>
-            <Link className="site-logo" to="/">#VanLife</Link>
-            <nav>
-              <Link to="/about">About</Link>
-              <Link to="/vans">Vans</Link>
-            </nav>
-          </header>
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/vans" element={<Vans />}></Route>
-            <Route path="/vans/:id" element={<VansDetail />}></Route>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/vans" element={<Vans />} />
+              <Route path="/vans/:id" element={<VansDetail />} />
+            </Route>
           </Routes>
-        </Main>
       </BrowserRouter>
   )
 }
